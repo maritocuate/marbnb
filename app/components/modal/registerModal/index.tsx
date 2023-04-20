@@ -103,7 +103,7 @@ const RegisterModal = () => {
                     Already have an account?
                 </div>
                 <div
-                    onClick={() => ()}
+                    onClick={() => {}}
                     className='text-neutral-800 cursor-pointer hover:underline'>
                     Log in
                 </div>
