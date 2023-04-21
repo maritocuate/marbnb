@@ -16,6 +16,7 @@ import Modal from '..'
 import Heading from '../../heading'
 import Input from '../../inputs/input'
 import Button from '../../button'
+import { signIn } from 'next-auth/react'
 
 const RegisterModal = () => {
     const registerModal = useRegisterModal()
@@ -90,13 +91,13 @@ const RegisterModal = () => {
                 outline
                 label='Continue with Google'
                 icon={FcGoogle}
-                onClick={() => {}}
+                onClick={() => signIn('google')}
             />
             <Button
                 outline
                 label='Continue with Github'
                 icon={AiFillGithub}
-                onClick={() => {}}
+                onClick={() => signIn('github')}
             />
             <div className="flex flex-row justify-center items-center gap-2">
                 <div>
