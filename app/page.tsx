@@ -4,6 +4,7 @@ import RegisterModal from './components/modal/registerModal'
 import LoginModal from './components/modal/loginModal'
 import ToasterProvider from './components/providers/toasterProvider'
 import getCurrentUser from './actions/getCurrentUsers'
+import RentModal from './components/modal/rentModal'
 
 const inter = Inter({ subsets: ['latin'] })
 
@@ -12,6 +13,7 @@ export default async function Home() {
   return (
     <main>
       <ToasterProvider />
+      <RentModal />
       <LoginModal />
       <RegisterModal />
       <Navbar currentUser={ currentUser } />
