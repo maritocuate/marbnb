@@ -13,6 +13,7 @@ import {
 import { toast } from 'react-hot-toast'
 
 import useLoginModal from '../../hooks/useLoginModal'
+import useRegisterModal from '../../hooks/useRegisterModal'
 import Modal from '..'
 import Heading from '../../heading'
 import Input from '../../inputs/input'
@@ -22,6 +23,7 @@ import { useRouter } from 'next/navigation'
 const LoginModal = () => {
     const router = useRouter()
     const loginModal = useLoginModal()
+    const registerModal = useRegisterModal()
     const [loading, setLoading] = useState(false)
 
     const {
@@ -58,6 +60,11 @@ const LoginModal = () => {
             }
         })
     }
+
+    const toggleModal = useCallback(() => {
+        loginModal.onClose()
+        registerModal.onOpen()
+    }, [loginModal, registerModal])
 
     const bodyContent = (
         <div className="flex flex-col gap-4">
@@ -102,12 +109,12 @@ const LoginModal = () => {
             />
             <div className="flex flex-row justify-center items-center gap-2">
                 <div>
-                    Already have an account?
+                    First time using Marbnb?
                 </div>
                 <div
-                    onClick={() => {}}
+                    onClick={toggleModal}
                     className='text-neutral-800 cursor-pointer hover:underline'>
-                    Log in
+                    Create an account
                 </div>
             </div>
         </div>
