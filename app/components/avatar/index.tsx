@@ -7,7 +7,7 @@ interface AvatarProps {
     src: string | null | undefined
 }
 
-const Avatar: ReactFC<AvatarProps> = ({
+const Avatar: React.FC<AvatarProps> = ({
     src
 }) => {
     return(
