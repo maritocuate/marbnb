@@ -1,11 +1,10 @@
 'use client'
 
 import Select from 'react-select'
-import { StringMappingType } from 'typescript'
 import useCountries from '../../hooks/useCountries'
 
 export type CountrySelectValue = {
-    flag: StringMappingType
+    flag: string
     label: string
     latlng: number[]
     region: string
@@ -15,7 +14,6 @@ export type CountrySelectValue = {
 interface CountrySelectProps {
     value?: CountrySelectValue
     onChange: (value:CountrySelectValue) => void
-
 }
 
 const CountrySelect: React.FC<CountrySelectProps> = ({

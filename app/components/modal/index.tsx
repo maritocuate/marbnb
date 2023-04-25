@@ -5,13 +5,13 @@ import { IoMdClose } from 'react-icons/io'
 import Button from '../button'
 
 interface ModalProps {
-    isOpen: boolean
-    onClose?: () => void
-    onSubmit?: () => void
+    isOpen?: boolean
+    onClose: () => void
+    onSubmit: () => void
     title?: string
     body?: React.ReactElement
     footer?: React.ReactElement
-    actionLabel?: string
+    actionLabel: string
     disabled?: boolean
     secondaryAction?: () => void
     secondaryLabel?: string
