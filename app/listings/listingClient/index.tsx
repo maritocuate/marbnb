@@ -45,12 +45,12 @@ const ListingClient: React.FC<ListingClientProps> = ({
       const range = eachDayOfInterval({
         start: new Date(reservation.startDate),
         end: new Date(reservation.endDate)
-      });
+      })
 
       dates = [...dates, ...range]
-    });
+    })
 
-    return dates;
+    return dates
   }, [reservations])
 
   const category = useMemo(() => {
@@ -64,9 +64,9 @@ const ListingClient: React.FC<ListingClientProps> = ({
 
   const onCreateReservation = useCallback(() => {
       if (!currentUser) {
-        return loginModal.onOpen();
+        return loginModal.onOpen()
       }
-      setIsLoading(true);
+      setIsLoading(true)
 
       axios.post('/api/reservations', {
         totalPrice,
@@ -122,7 +122,7 @@ const ListingClient: React.FC<ListingClientProps> = ({
           <ListingHead
             title={listing.title}
             imageSrc={listing.imageSrc}
-            locationValue={'listing.locationValue'}
+            localValue={listing.localValue}
             id={listing.id}
             currentUser={currentUser}
           />
@@ -142,7 +142,7 @@ const ListingClient: React.FC<ListingClientProps> = ({
               roomCount={listing.roomCount}
               guestCount={listing.guestCount}
               bathroomCount={listing.bathroomCount}
-              locationValue={listing.locationValue}
+              localValue={listing.localValue}
             />
             <div 
               className="
