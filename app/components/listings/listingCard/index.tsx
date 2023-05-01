@@ -2,7 +2,8 @@
 
 import Image from "next/image"
 import { SafeUser, safeListings } from "@/app/types"
-import { Reservation } from "@prisma/client"
+import { 
+    Reservation } from "@prisma/client"
 import { useRouter } from "next/navigation"
 import useCountries from "../../hooks/useCountries"
 import { useCallback, useMemo } from "react"
@@ -58,11 +59,13 @@ const ListingCard: React.FC<ListingCardProps> = ({
     }, [reservation])
 
     return (
-        <div className="
-            col-span-1
-            cursor-pointer
-            group
-        ">
+        <div
+            onClick={() => router.push(`/listings/${data.id}`)}
+            className="
+                col-span-1
+                cursor-pointer
+                group"
+            >
             <div className="flex flex-col gap-2 w-full">
                 <div className="
                     aspect-square 
