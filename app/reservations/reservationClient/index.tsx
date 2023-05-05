@@ -23,7 +23,7 @@ const ReservationClient: React.FC<ReservationClientProps> = ({
     const router = useRouter()
     const [deleteId, setDeleteId] = useState('')
 
-    const onCancel = useCallback((id:String) => {
+    const onCancel = useCallback((id:string) => {
         setDeleteId(id)
 
         axios.delete(`/api/reservations/${id}`)
